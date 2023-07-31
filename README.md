@@ -7,6 +7,7 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ❗ Requirements
+- run with root previllage
 - its written for UBUNTU and CENTOS
 - no any requirements, they will be install
 
