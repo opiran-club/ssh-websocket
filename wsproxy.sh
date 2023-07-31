@@ -20,13 +20,8 @@ fun_wsproxy () {
         fi
     }
 
-
     download_wsproxy() {
         echo "${yellow}Downloading WebSocket proxy script...${reset}"
-        if [ ! -d "/etc/OPIranPanel" ]; then
-            sudo mkdir -p /etc/OPIranPanel
-            sudo chown $USER:$USER /etc/OPIranPanel
-        fi
         wget -O /root/wsproxy.py https://github.com/opiran-club/ssh-websocket/raw/main/wsproxy.py
     }
 clear
@@ -66,8 +61,8 @@ clear
         ask_http_port
 
         # Set up the WebSocket proxy configuration
-        echo "RESPONSE = \"HTTP/1.1 101 <font color='null'></font>\"\r" >> /etc/OPIranPanel/wsproxy.py
-        echo "DEFAULT_HOST = \"$sni_host:$ssh_port\"\r" >> /etc/OPIranPanel/wsproxy.py
+        echo "RESPONSE = \"HTTP/1.1 101 <font color='null'></font>\"\r" >> /root/wsproxy.py
+        echo "DEFAULT_HOST = \"$sni_host:$ssh_port\"\r" >> /root/wsproxy.py
 
         # Set up the service file
         echo "[Unit]
@@ -125,7 +120,6 @@ clear
     uninstall_wsproxy() {
         sudo systemctl stop wsproxy
         sudo systemctl disable wsproxy
-        sudo rm -rf /etc/OPIranPanel
         sudo rm /etc/systemd/system/wsproxy.service
         echo "${yellow}WebSocket proxy has been uninstalled.${RESET}"
     }
@@ -140,7 +134,7 @@ clear
         fi
 clear
     PS3="${CYAN}Please select an option: ${RESET}"
-    select opt in "Install WebSocket Proxy" "Start WebSocket Proxy" "Stop WebSocket Proxy" "Restart WebSocket Proxy" "Uninstall WebSocket Proxy" "Generate HTTP Injector Payload" "Main Menu" "Exit"; do
+    select opt in "Install WebSocket Proxy" "Start WebSocket Proxy" "Stop WebSocket Proxy" "Restart WebSocket Proxy" "Uninstall WebSocket Proxy" "Generate HTTP Injector Payload" "Exit"; do
         case $opt in
             "Install WebSocket Proxy")
                 download_wsproxy
@@ -163,10 +157,6 @@ clear
                 ;;
             "Cloudflare WSProxy")
                 fun_wsproxy  # Call the new function
-                ;;
-            "Main Menu")
-                printf "${RED}Returning to the main menu...${RESET}\n"
-                menu
                 ;;
             "Exit")
                 break
