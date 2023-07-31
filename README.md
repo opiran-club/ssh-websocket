@@ -12,13 +12,13 @@
 - no any requirements, they will be install
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
-❗❗ INTALLATION
+❗❗ INSTALLATION
 
 ```
 apt update && apt upgrade -y && wget https://raw.githubusercontent.com/opiran-club/ssh-websocket/main/wsproxy.sh && chmod +x wsproxy.sh && ./wsproxy.sh
 ```
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
-#### Author by OPIran
+#### Written by OPIran
 TELEGRAM CHANNEL: https://t.me/OPIranv2rayproxy
 TELEGRAM GROUP: https://t.me/OPIranCluB
