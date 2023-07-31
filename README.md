@@ -3,7 +3,7 @@
 #### setup websocket server over ssh via cloudflare CDN
 #### Fully automatic script just answer the question and at the end gives you payload and enjoy
 
-##### Feel free to contact with me 
+##### Feel free to contact with me (telegram or github)
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ❗ Requirements
@@ -21,4 +21,5 @@ apt update && apt upgrade -y && wget https://raw.githubusercontent.com/opiran-cl
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 #### Written by OPIran
 TELEGRAM CHANNEL: https://t.me/OPIranv2rayproxy
+
 TELEGRAM GROUP: https://t.me/OPIranCluB
