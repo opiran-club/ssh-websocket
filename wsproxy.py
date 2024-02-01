@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
-import socket, threading, thread, select, signal, sys, time, getopt
+import socket, threading, _thread, select, signal, sys, time, getopt
 
 PASS = ''
 LISTENING_ADDR = '0.0.0.0'
