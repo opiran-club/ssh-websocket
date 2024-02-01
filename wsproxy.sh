@@ -27,6 +27,7 @@ fun_wsproxy () {
 clear
     # Function to configure the WebSocket proxy
     configure_wsproxy() {
+    pip install websockets
         echo "${cyan}Configuring WebSocket proxy...${reset}"
 
         # Ask for CDN host
